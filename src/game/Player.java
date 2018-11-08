@@ -1,10 +1,7 @@
-package Pacman.PlayerMechanics;
+package game;
 
-import Pacman.Draw.Gui;
-import Pacman.GameMechanics.Collision;
-import Pacman.PlayerMechanics.Dir;
-import Pacman.Setup.GameMaster;
-import Pacman.Setup.Map;
+import data.Collision;
+import data.Map;
 
 import java.awt.*;
 

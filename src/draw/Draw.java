@@ -1,14 +1,14 @@
-package Pacman.Draw;
+package draw;
 
 
-import Pacman.Setup.GameMaster;
-import Pacman.Setup.Map;
+import game.GameMaster;
+import data.Map;
 
 import javax.swing.*;
 import java.awt.*;
 import java.awt.image.BufferedImage;
 
-public class DrawMap extends JLabel {
+public class Draw extends JLabel{
     int x, y, width, height, ang_1, ang_2;
     BufferedImage[] wall = Map.wall;
     int[][] wallCo = Map.wallCo;
@@ -20,7 +20,9 @@ public class DrawMap extends JLabel {
     boolean score_col = false;
     int scorecount = 0;
 
-    public void paintComponent(Graphics g) {
+    protected void paintComponent(Graphics g) {
+        super.paintComponent(g);
+
         x = GameMaster.p.getX();
         y = GameMaster.p.getY();
         width = GameMaster.p.getWidth();

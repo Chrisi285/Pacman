@@ -1,9 +1,10 @@
-package Pacman.Setup;
+package actions;
 
-import Pacman.Draw.Gui;
-import Pacman.GameMechanics.Clock;
-import Pacman.GameMechanics.Collision;
-import Pacman.GameMechanics.MoveClock;
+import data.Map;
+import game.GameMaster;
+import gui.Gui;
+import clocks.Clock;
+import clocks.MoveClock;
 
 public class Main {
     public static void main(String[] args) {

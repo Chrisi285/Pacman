@@ -1,6 +1,4 @@
-package Pacman.GameMechanics;
-
-import Pacman.Setup.Map;
+package data;
 
 public class Collision {
 

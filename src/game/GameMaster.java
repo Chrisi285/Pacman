@@ -1,12 +1,10 @@
-package Pacman.Setup;
+package game;
 
-import Pacman.PlayerMechanics.Player;
+import data.Map;
+import game.Player;
 
 import java.awt.*;
 import java.io.BufferedReader;
-import java.io.FileNotFoundException;
-import java.io.FileReader;
-import java.io.IOException;
 import java.util.ArrayList;
 
 public class GameMaster {

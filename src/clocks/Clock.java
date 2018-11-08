@@ -1,8 +1,6 @@
-package Pacman.GameMechanics;
+package clocks;
 
-import Pacman.PlayerMechanics.Dir;
-import Pacman.Setup.GameMaster;
-import Pacman.Draw.Gui;
+import game.GameMaster;
 
 import java.util.Timer;
 import java.util.TimerTask;

@@ -1,7 +1,8 @@
-package Pacman.GameMechanics;
+package clocks;
 
-import Pacman.Setup.GameMaster;
-import Pacman.Setup.Map;
+import data.Collision;
+import game.GameMaster;
+import data.Map;
 
 import java.awt.*;
 import java.util.Timer;
@@ -18,6 +19,7 @@ public class MoveClock {
                 GameMaster.p.changeDir();
                 Point pnt = Map.ctp(GameMaster.p.getX(), GameMaster.p.getY());
                 Collision.collidePoint(pnt.x, pnt.y);
+                //Collide last move
                 GameMaster.p.mouth();
 
             }

@@ -1,4 +1,4 @@
-package Pacman.PlayerMechanics;
+package game;
 
 public class ScoreItem {
     int x, y;

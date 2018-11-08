@@ -1,12 +1,11 @@
-package Pacman.Setup;
+package data;
 
-import Pacman.PlayerMechanics.ScoreItem;
+import game.ScoreItem;
 
 import javax.imageio.ImageIO;
 import java.awt.*;
 import java.awt.image.BufferedImage;
 import java.io.*;
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -26,7 +25,7 @@ public class Map {
 
     public static void load() {
 
-        File file = new File("rsc/mapdata.txt");
+        File file = new File("data/mapdata.txt");
         Scanner sc = null;
 
         try {
