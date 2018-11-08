@@ -16,6 +16,6 @@ public class MoveClock {
                 GameMaster.p.changeDir();
 
             }
-        },15,80);
+        },15,160);
     }
 }
