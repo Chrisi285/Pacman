@@ -1,9 +1,12 @@
 package Pacman.Setup;
 
+import Pacman.PlayerMechanics.ScoreItem;
+
 import javax.imageio.ImageIO;
 import java.awt.*;
 import java.awt.image.BufferedImage;
 import java.io.*;
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -18,6 +21,7 @@ public class Map {
     public static ArrayList<Point> colCo = new ArrayList<>();
     public static BufferedImage[] wall = new BufferedImage[12];
     public static BufferedImage point_pick;
+    public static ArrayList<ScoreItem> scorepoint = new ArrayList<>();
 
 
     public static void load() {
@@ -80,8 +84,19 @@ public class Map {
             for (int k = 0; k <= kachelny - 1; k++) {
                 pointCo[i][k] = Integer.parseInt(line_5[pickLine_point]);
                 pickLine_point++;
+
             }
         }
+
+        for (int i = 0; i <= Map.pointCo.length-1; i++){
+            for (int k = 0; k<= Array.getLength(Map.pointCo[0])-1; k++){
+                if(Map.pointCo[i][k]== 10 ){
+                    scorepoint.add(new ScoreItem(i,k));
+                }
+            }
+        }
+
+
 
         //Collisionsdaten in Array laden
         colCo.clear();

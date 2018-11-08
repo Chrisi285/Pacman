@@ -14,6 +14,7 @@ public class MoveClock {
             @Override
             public void run() {
                 GameMaster.p.changeDir();
+                Collision.collidePoint(GameMaster.p.getX(), GameMaster.p.getY());
 
             }
         },15,160);
