@@ -12,7 +12,6 @@ import java.util.ArrayList;
 public class GameMaster {
     public static Player p;
 
-    //static FileReader Map;
     static BufferedReader br;
     static ArrayList<String> objectsCo = new ArrayList<>();
 

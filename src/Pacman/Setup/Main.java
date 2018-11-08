@@ -2,6 +2,7 @@ package Pacman.Setup;
 
 import Pacman.Draw.Gui;
 import Pacman.GameMechanics.Clock;
+import Pacman.GameMechanics.Collision;
 import Pacman.GameMechanics.MoveClock;
 
 public class Main {
@@ -11,6 +12,7 @@ public class Main {
         Clock.start();
         Clock.start_mouth();
         MoveClock.start();
+
         new Gui();
 
     }

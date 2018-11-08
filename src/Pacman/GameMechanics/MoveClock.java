@@ -14,7 +14,8 @@ public class MoveClock {
             @Override
             public void run() {
                 GameMaster.p.changeDir();
+
             }
-        },15,160);
+        },15,80);
     }
 }

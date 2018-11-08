@@ -1,16 +1,19 @@
 package Pacman.GameMechanics;
 
+import Pacman.Setup.GameMaster;
+import Pacman.Setup.Map;
+
+import java.util.Timer;
+import java.util.TimerTask;
+
 public class Collision {
-    public static boolean collideLeft(int x, int r){
-        return(x<=1);
-    }
-    public static boolean collideRight(int x, int r){
-        return (x + r>= 1004);
-    }
-    public static boolean collideTop(int y, int r){
-        return(y<= 1);
-    }
-    public static boolean collideBottom(int y, int r){
-        return(y+r>=728);
+
+    public static boolean collideWall(int x, int y){
+        for(int i = 0; i< Map.colCo.size(); i++){
+            if (x == Map.colCo.get(i).x && y == Map.colCo.get(i).y){
+                return true;
+            }
+        }
+        return false;
     }
 }

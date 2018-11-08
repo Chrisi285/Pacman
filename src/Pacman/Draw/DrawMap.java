@@ -10,9 +10,9 @@ import java.lang.reflect.Array;
 
 public class DrawMap extends JLabel {
     int x,y,width,height,ang_1,ang_2;
-    BufferedImage [] wall = Map.getWall();
-    int [][] wallCo = Map.getWallCo();
-    int [][] pointCo = Map.getPointCo();
+    BufferedImage [] wall = Map.wall;
+    int [][] wallCo = Map.wallCo;
+    int [][] pointCo = Map.pointCo;
     int png_Chooser_wall=0;
     int png_chooser_point = 0;
     int wall_x = 0;

@@ -4,6 +4,9 @@ import Pacman.Draw.Gui;
 import Pacman.GameMechanics.Collision;
 import Pacman.PlayerMechanics.Dir;
 import Pacman.Setup.GameMaster;
+import Pacman.Setup.Map;
+
+import java.awt.*;
 
 public class Player {
     int x;
@@ -25,7 +28,8 @@ public class Player {
         this.height = height;
         this.ang_1 = ang_1;
         this.ang_2 = ang_2;
-        this.hspeed = 2;
+        this.speed = 2;
+        this.hspeed = speed;
         this.vspeed = 0;
     }
 
@@ -36,25 +40,75 @@ public class Player {
         y += vspeed;
     }
 
+
     public void changeDir() {
+        Point p = Map.ctp(x, y);
+
+        boolean left, right, up, down;
+        left = Collision.collideWall(p.x - 1, p.y);
+        right = Collision.collideWall(p.x + 1, p.y);
+        up = Collision.collideWall(p.x, p.y - 1);
+        down = Collision.collideWall(p.x, p.y + 1);
+
+        if (hspeed == speed) {
+            if (right) {
+                hspeed = 0;
+            }
+        }
+
+        if (hspeed == -speed) {
+            if (left) {
+                hspeed = 0;
+            }
+        }
+
+        if (vspeed == speed) {
+            if (down) {
+                vspeed = 0;
+            }
+        }
+
+        if (vspeed == -speed) {
+            if (up) {
+                vspeed = 0;
+            }
+        }
+
         switch (dir) {
             case LEFT:
-                hspeed = -2;
-                vspeed = 0;
+                if (!left) {
+                    hspeed = -speed;
+                    vspeed = 0;
+                } else {
+                    hspeed = 0;
+                }
                 break;
             case RIGHT:
-                hspeed = 2;
-                vspeed = 0;
+                if (!right) {
+                    hspeed = speed;
+                    vspeed = 0;
+                } else {
+                    hspeed = 0;
+                }
                 break;
             case UP:
-                vspeed = -2;
-                hspeed = 0;
+                if (!up) {
+                    vspeed = -speed;
+                    hspeed = 0;
+                } else {
+                    vspeed = 0;
+                }
                 break;
             case DOWN:
-                vspeed = 2;
-                hspeed = 0;
+                if (!down) {
+                    vspeed = speed;
+                    hspeed = 0;
+                } else {
+                    vspeed = 0;
+                }
                 break;
         }
+
     }
 
 
