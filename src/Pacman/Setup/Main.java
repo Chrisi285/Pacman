@@ -10,7 +10,6 @@ public class Main {
         Map.load();
         GameMaster.setup();
         Clock.start();
-        Clock.start_mouth();
         MoveClock.start();
 
         new Gui();

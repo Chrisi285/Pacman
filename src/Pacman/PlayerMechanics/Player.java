@@ -19,6 +19,7 @@ public class Player {
     int hspeed;
     int vspeed;
     Dir dir = Dir.RIGHT;
+    private boolean auf;
 
 
     public Player(int x, int y, int width, int height, int ang_1, int ang_2) {
@@ -31,6 +32,61 @@ public class Player {
         this.speed = 2;
         this.hspeed = speed;
         this.vspeed = 0;
+    }
+
+    public void mouth(){
+
+        if (hspeed == speed) {
+            if (auf) {
+                GameMaster.p.setAng_1(23);
+                GameMaster.p.setAng_2(317);
+                auf = false;
+            } else {
+                GameMaster.p.setAng_1(0);
+                GameMaster.p.setAng_2(360);
+                auf = true;
+            }
+        }
+
+        if (hspeed == -speed) {
+            if (auf) {
+                GameMaster.p.setAng_1(203);
+                GameMaster.p.setAng_2(317);
+
+                auf = false;
+            } else {
+                GameMaster.p.setAng_1(0);
+                GameMaster.p.setAng_2(360);
+                auf = true;
+            }
+        }
+
+        if (vspeed == speed) {
+            if (auf) {
+                GameMaster.p.setAng_1(293);
+                GameMaster.p.setAng_2(317);
+
+                auf = false;
+            } else {
+                GameMaster.p.setAng_1(0);
+                GameMaster.p.setAng_2(360);
+                auf = true;
+            }
+        }
+
+        if (vspeed == -speed) {
+            if (auf) {
+                GameMaster.p.setAng_1(113);
+                GameMaster.p.setAng_2(317);
+
+                auf = false;
+            } else {
+                GameMaster.p.setAng_1(0);
+                GameMaster.p.setAng_2(360);
+                auf = true;
+            }
+        }
+
     }
 
 

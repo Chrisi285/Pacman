@@ -18,6 +18,7 @@ public class MoveClock {
                 GameMaster.p.changeDir();
                 Point pnt = Map.ctp(GameMaster.p.getX(), GameMaster.p.getY());
                 Collision.collidePoint(pnt.x, pnt.y);
+                GameMaster.p.mouth();
 
             }
         },15,160);
