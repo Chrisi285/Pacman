@@ -88,35 +88,35 @@ public class Map {
             }
         }
 
-        for (int i = 0; i <= Map.pointCo.length-1; i++){
-            for (int k = 0; k<= Array.getLength(Map.pointCo[0])-1; k++){
-                if(Map.pointCo[i][k]== 10 ){
-                    scorepoint.add(new ScoreItem(i,k));
+        //Scorepunkte laden
+        for (int x = 0; x <= Map.pointCo.length - 1; x++) {
+            for (int y = 0; y <= Map.pointCo[0].length - 1; y++) {
+                if (Map.pointCo[x][y] == 10) {
+                    scorepoint.add(new ScoreItem(x, y));
                 }
             }
         }
 
 
-
         //Collisionsdaten in Array laden
         colCo.clear();
 
-        for (int i = 0; i < line_2.length - 1; i+=2) {
+        for (int i = 0; i < line_2.length - 1; i += 2) {
             colCo.add(new Point(Integer.parseInt(line_2[i]), Integer.parseInt(line_2[i + 1])));
         }
 
     }
 
     //pos to coordinates
-    public static Point ptc(int x, int y){
-        Point p = new Point(0,0);
+    public static Point ptc(int x, int y) {
+        Point p = new Point(0, 0);
         p.x = x * 32;
         p.y = y * 32;
         return p;
     }
 
-    public static Point ctp(int x, int y){
-        Point p = new Point(0,0);
+    public static Point ctp(int x, int y) {
+        Point p = new Point(0, 0);
         p.x = x / 32;
         p.y = y / 32;
         return p;

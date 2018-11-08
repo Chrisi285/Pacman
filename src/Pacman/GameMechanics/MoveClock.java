@@ -1,7 +1,9 @@
 package Pacman.GameMechanics;
 
 import Pacman.Setup.GameMaster;
+import Pacman.Setup.Map;
 
+import java.awt.*;
 import java.util.Timer;
 import java.util.TimerTask;
 
@@ -14,7 +16,8 @@ public class MoveClock {
             @Override
             public void run() {
                 GameMaster.p.changeDir();
-                Collision.collidePoint(GameMaster.p.getX(), GameMaster.p.getY());
+                Point pnt = Map.ctp(GameMaster.p.getX(), GameMaster.p.getY());
+                Collision.collidePoint(pnt.x, pnt.y);
 
             }
         },15,160);

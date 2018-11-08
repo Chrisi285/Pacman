@@ -2,12 +2,11 @@ package Pacman.PlayerMechanics;
 
 public class ScoreItem {
     int x, y;
-    boolean enabled;
+    boolean enabled = true;
 
     public ScoreItem(int x, int y) {
         this.x = x;
         this.y = y;
-        this.enabled = true;
     }
 
     public int getX() {
