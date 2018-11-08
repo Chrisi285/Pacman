@@ -1,7 +1,6 @@
 package Pacman.Setup;
 
 import Pacman.PlayerMechanics.Dir;
-import Pacman.Setup.GameMaster;
 
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;

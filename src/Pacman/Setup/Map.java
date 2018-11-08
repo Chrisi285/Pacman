@@ -1,11 +1,12 @@
 package Pacman.Setup;
 
 import javax.imageio.ImageIO;
+import java.awt.*;
 import java.awt.image.BufferedImage;
 import java.io.*;
 import java.util.Scanner;
 
-public class LoadMap {
+public class Map {
     public static String[] line_1;
     public static String[] line_2;
     public static String[] line_3;
@@ -98,6 +99,22 @@ public class LoadMap {
         System.out.println(line_2.length);*/
 
 
+    }
+
+    //pos to coordinates
+    public static Point ptc(int x, int y){
+        Point p = new Point(0,0);
+        p.x = x * 32;
+        p.y = y * 32;
+        System.out.println(p);
+        return p;
+    }
+
+    public static Point ctp(int x, int y){
+        Point p = new Point(0,0);
+        p.x = x / 32;
+        p.y = y / 32;
+        return p;
     }
 
     public static int[][] getWallCo() {

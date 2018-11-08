@@ -8,56 +8,54 @@ import Pacman.Setup.GameMaster;
 public class Player {
     int x;
     int y;
-    int  width;
+    int width;
     int height;
-     int ang_1;
-     int ang_2;
-     int speed;
+    int ang_1;
+    int ang_2;
+    int speed;
+    int hspeed;
+    int vspeed;
     Dir dir = Dir.RIGHT;
 
 
-public Player (int x, int y, int width, int height, int ang_1,  int ang_2){
-    this.x = x;
-    this.y = y;
-    this.width = width;
-    this.height = height;
-    this.ang_1 = ang_1;
-    this.ang_2 = ang_2;
-    this.speed = 2;
-}
-
-
-public  void move(){
-    switch(dir){
-        case LEFT:
-            if(!Collision.collideLeft(GameMaster.p.getX(),GameMaster.p.getWidth())){
-                x -= speed;
-            }
-
-            break;
-        case RIGHT:
-            if(!Collision.collideRight(GameMaster.p.getX(),GameMaster.p.getWidth())){
-                x += speed;
-            }
-
-            break;
-        case UP:
-            if(!Collision.collideTop(GameMaster.p.getY(),GameMaster.p.getWidth())){
-                y -= speed;
-            }
-            break;
-        case DOWN:
-            if(!Collision.collideBottom(GameMaster.p.getY(),GameMaster.p.getWidth())){
-                y += speed;
-            }
-            break;
-        case IDLE:
-            y +=0;
-            x +=0;
+    public Player(int x, int y, int width, int height, int ang_1, int ang_2) {
+        this.x = x;
+        this.y = y;
+        this.width = width;
+        this.height = height;
+        this.ang_1 = ang_1;
+        this.ang_2 = ang_2;
+        this.hspeed = 2;
+        this.vspeed = 0;
     }
 
 
-}
+    public void move() {
+
+        x += hspeed;
+        y += vspeed;
+    }
+
+    public void changeDir() {
+        switch (dir) {
+            case LEFT:
+                hspeed = -2;
+                vspeed = 0;
+                break;
+            case RIGHT:
+                hspeed = 2;
+                vspeed = 0;
+                break;
+            case UP:
+                vspeed = -2;
+                hspeed = 0;
+                break;
+            case DOWN:
+                vspeed = 2;
+                hspeed = 0;
+                break;
+        }
+    }
 
 
     public Dir getDir() {
@@ -68,11 +66,11 @@ public  void move(){
         this.dir = dir;
     }
 
-    public  int getX() {
+    public int getX() {
         return x;
     }
 
-    public  int getY() {
+    public int getY() {
         return y;
     }
 
@@ -123,4 +121,5 @@ public  void move(){
     public void setSpeed(int speed) {
         this.speed = speed;
     }
+
 }

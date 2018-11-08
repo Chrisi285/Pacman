@@ -15,20 +15,17 @@ public class Clock {
     int ang_2;
 
 
-
-
-
-    public static void start(){
+    public static void start() {
         time.scheduleAtFixedRate(new TimerTask() {
             @Override
             public void run() {
-           GameMaster.p.move();
+                GameMaster.p.move();
 
             }
-        }, 15,10);
+        }, 15, 10);
     }
 
-    public  static void start_mouth(){
+    public static void start_mouth() {
 
 
         mouthmove.scheduleAtFixedRate(new TimerTask() {
@@ -37,14 +34,13 @@ public class Clock {
                 Dir dir;
                 dir = GameMaster.p.getDir();
 
-                switch (dir){
+                switch (dir) {
                     case RIGHT:
-                        if(auf== true){
+                        if (auf == true) {
                             GameMaster.p.setAng_1(0);
                             GameMaster.p.setAng_2(360);
                             auf = false;
-                        }
-                        else{
+                        } else {
                             GameMaster.p.setAng_1(23);
                             GameMaster.p.setAng_2(317);
                             auf = true;
@@ -52,13 +48,12 @@ public class Clock {
                         break;
 
                     case LEFT:
-                        if(auf== true){
+                        if (auf == true) {
                             GameMaster.p.setAng_1(203);
                             GameMaster.p.setAng_2(317);
 
                             auf = false;
-                        }
-                        else{
+                        } else {
                             GameMaster.p.setAng_1(0);
                             GameMaster.p.setAng_2(360);
                             auf = true;
@@ -66,13 +61,12 @@ public class Clock {
                         break;
 
                     case UP:
-                        if(auf== true){
+                        if (auf == true) {
                             GameMaster.p.setAng_1(113);
                             GameMaster.p.setAng_2(317);
 
                             auf = false;
-                        }
-                        else{
+                        } else {
                             GameMaster.p.setAng_1(0);
                             GameMaster.p.setAng_2(360);
                             auf = true;
@@ -80,13 +74,12 @@ public class Clock {
                         break;
 
                     case DOWN:
-                        if(auf== true){
+                        if (auf == true) {
                             GameMaster.p.setAng_1(293);
                             GameMaster.p.setAng_2(317);
 
                             auf = false;
-                        }
-                        else{
+                        } else {
                             GameMaster.p.setAng_1(0);
                             GameMaster.p.setAng_2(360);
                             auf = true;
@@ -96,6 +89,6 @@ public class Clock {
 
 
             }
-        },500,150);
+        }, 500, 150);
     }
 }

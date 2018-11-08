@@ -2,15 +2,16 @@ package Pacman.Setup;
 
 import Pacman.Draw.Gui;
 import Pacman.GameMechanics.Clock;
-import Pacman.Setup.GameMaster;
+import Pacman.GameMechanics.MoveClock;
 
 public class Main {
     public static void main(String[] args) {
-        LoadMap.load();
-        new Gui();
-       GameMaster.setup();
+        Map.load();
+        GameMaster.setup();
         Clock.start();
         Clock.start_mouth();
+        MoveClock.start();
+        new Gui();
 
     }
 }

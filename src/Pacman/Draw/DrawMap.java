@@ -1,7 +1,7 @@
 package Pacman.Draw;
 
 import Pacman.Setup.GameMaster;
-import Pacman.Setup.LoadMap;
+import Pacman.Setup.Map;
 
 import javax.swing.*;
 import java.awt.*;
@@ -10,9 +10,9 @@ import java.lang.reflect.Array;
 
 public class DrawMap extends JLabel {
     int x,y,width,height,ang_1,ang_2;
-    BufferedImage [] wall = LoadMap.getWall();
-    int [][] wallCo = LoadMap.getWallCo();
-    int [][] pointCo = LoadMap.getPointCo();
+    BufferedImage [] wall = Map.getWall();
+    int [][] wallCo = Map.getWallCo();
+    int [][] pointCo = Map.getPointCo();
     int png_Chooser_wall=0;
     int png_chooser_point = 0;
     int wall_x = 0;
@@ -87,10 +87,10 @@ public class DrawMap extends JLabel {
            }
 
         }
-        for (int i = 0;i <= LoadMap.pointCo.length-1; i++){
-            for (int k = 0; k<= Array.getLength(LoadMap.pointCo[0])-1;k++){
-                if(LoadMap.pointCo[i][k]== 10){
-                    g.drawImage(LoadMap.point_pick, i*32,k*32,null);
+        for (int i = 0; i <= Map.pointCo.length-1; i++){
+            for (int k = 0; k<= Array.getLength(Map.pointCo[0])-1; k++){
+                if(Map.pointCo[i][k]== 10){
+                    g.drawImage(Map.point_pick, i*32,k*32,null);
                 }
             }
         }
