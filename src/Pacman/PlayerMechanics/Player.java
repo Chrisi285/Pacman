@@ -38,8 +38,8 @@ public class Player {
 
         if (hspeed == speed) {
             if (auf) {
-                GameMaster.p.setAng_1(23);
-                GameMaster.p.setAng_2(317);
+                GameMaster.p.setAng_1(45);
+                GameMaster.p.setAng_2(270);
                 auf = false;
             } else {
                 GameMaster.p.setAng_1(0);
@@ -50,8 +50,8 @@ public class Player {
 
         if (hspeed == -speed) {
             if (auf) {
-                GameMaster.p.setAng_1(203);
-                GameMaster.p.setAng_2(317);
+                GameMaster.p.setAng_1(225);
+                GameMaster.p.setAng_2(270);
 
                 auf = false;
             } else {
@@ -63,8 +63,8 @@ public class Player {
 
         if (vspeed == speed) {
             if (auf) {
-                GameMaster.p.setAng_1(293);
-                GameMaster.p.setAng_2(317);
+                GameMaster.p.setAng_1(313);
+                GameMaster.p.setAng_2(270);
 
                 auf = false;
             } else {
@@ -76,8 +76,8 @@ public class Player {
 
         if (vspeed == -speed) {
             if (auf) {
-                GameMaster.p.setAng_1(113);
-                GameMaster.p.setAng_2(317);
+                GameMaster.p.setAng_1(135);
+                GameMaster.p.setAng_2(270);
 
                 auf = false;
             } else {
