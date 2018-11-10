@@ -7,6 +7,7 @@ import java.awt.*;
 import java.awt.image.BufferedImage;
 import java.io.*;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.Scanner;
 
 public class Map {
@@ -17,11 +18,11 @@ public class Map {
     public static String[] line_5;
     public static int[][] wallCo;
     public static int[][] pointCo;
-    public static ArrayList<Point> colCo = new ArrayList<>();
+    public static boolean[][] collCo;
+    public static ScoreItem[][] scorepoints;
+    // public static ArrayList<Point> colCo = new ArrayList<>();
     public static BufferedImage[] wall = new BufferedImage[12];
     public static BufferedImage point_pick;
-    public static ArrayList<ScoreItem> scorepoint = new ArrayList<>();
-
 
     public static void load() {
 
@@ -88,21 +89,26 @@ public class Map {
         }
 
         //Scorepunkte laden
+        scorepoints = new ScoreItem[Map.pointCo.length][Map.pointCo[0].length];
+
         for (int x = 0; x <= Map.pointCo.length - 1; x++) {
             for (int y = 0; y <= Map.pointCo[0].length - 1; y++) {
+                scorepoints[x][y] = new ScoreItem(x,y);
                 if (Map.pointCo[x][y] == 10) {
-                    scorepoint.add(new ScoreItem(x, y));
+                    scorepoints[x][y].setEnabled(true);
                 }
             }
         }
 
 
         //Collisionsdaten in Array laden
-        colCo.clear();
-
+        // colCo.clear();
+        collCo = new boolean[kachelnx][kachelny];
         for (int i = 0; i < line_2.length - 1; i += 2) {
-            colCo.add(new Point(Integer.parseInt(line_2[i]), Integer.parseInt(line_2[i + 1])));
+            // colCo.add(new Point(Integer.parseInt(line_2[i]), Integer.parseInt(line_2[i + 1])));
+            collCo[Integer.parseInt(line_2[i])][Integer.parseInt(line_2[i + 1])] = true;
         }
+
 
     }
 

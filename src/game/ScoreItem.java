@@ -2,7 +2,7 @@ package game;
 
 public class ScoreItem {
     int x, y;
-    boolean enabled = true;
+    boolean enabled = false;
 
     public ScoreItem(int x, int y) {
         this.x = x;

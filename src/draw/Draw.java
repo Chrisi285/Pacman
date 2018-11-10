@@ -3,12 +3,13 @@ package draw;
 
 import game.GameMaster;
 import data.Map;
+import game.ScoreItem;
 
 import javax.swing.*;
 import java.awt.*;
 import java.awt.image.BufferedImage;
 
-public class Draw extends JLabel{
+public class Draw extends JLabel {
     int x, y, width, height, ang_1, ang_2;
     BufferedImage[] wall = Map.wall;
     int[][] wallCo = Map.wallCo;
@@ -81,14 +82,21 @@ public class Draw extends JLabel{
                 }
             }
         }
+        Point p;
 
-
-        for (int i = 0; i <= Map.scorepoint.size() - 1; i++) {
-            if (Map.scorepoint.get(i).isEnabled()) {
-                Point p = Map.ptc(Map.scorepoint.get(i).getX(), Map.scorepoint.get(i).getY());
-                g.drawImage(Map.point_pick, p.x, p.y, null);
+        for (int x = 0; x < Map.scorepoints.length; x++) {
+            for(int y = 0; y< Map.scorepoints[0].length; y++){
+              //  if(Map.scorepoints[x][y] != null){
+                    if(Map.scorepoints[x][y].isEnabled()){
+                        p = Map.ptc(x,y);
+                        g.drawImage(Map.point_pick, p.x, p.y, null);
+                    }
+               // }
             }
         }
+
+        // = Map.ptc(s.getX(), s.getY());
+//
 
 
         repaint();

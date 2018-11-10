@@ -17,7 +17,7 @@ public class Player {
     int vspeed;
     Dir dir = Dir.RIGHT;
     private boolean auf;
-
+    int temp = 0;
 
     public Player(int x, int y, int width, int height, int ang_1, int ang_2) {
         this.x = x;
@@ -31,7 +31,7 @@ public class Player {
         this.vspeed = 0;
     }
 
-    public void mouth(){
+    public void mouth() {
 
         if (hspeed == speed) {
             if (auf) {
@@ -89,19 +89,38 @@ public class Player {
 
     public void move() {
 
+        temp++;
+
         x += hspeed;
         y += vspeed;
+
+        Point p = Map.ctp(x, y);
+
+        if (temp == 16) {
+            changeDir();
+            Collision.collidePoint(p.x, p.y);
+            mouth();
+            temp = 0;
+        }
+
     }
 
 
     public void changeDir() {
+
         Point p = Map.ctp(x, y);
 
-        boolean left, right, up, down;
+        boolean left, right, up, down, now;
         left = Collision.collideWall(p.x - 1, p.y);
         right = Collision.collideWall(p.x + 1, p.y);
         up = Collision.collideWall(p.x, p.y - 1);
         down = Collision.collideWall(p.x, p.y + 1);
+        now = Collision.collideWall(p.x, p.y);
+
+        if (now) {
+            hspeed = 0;
+            vspeed = 0;
+        }
 
         if (hspeed == speed) {
             if (right) {
