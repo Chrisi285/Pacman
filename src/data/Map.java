@@ -21,31 +21,14 @@ public class Map {
     public static boolean[][] collCo;
     public static ScoreItem[][] scorepoints;
     // public static ArrayList<Point> colCo = new ArrayList<>();
-    public static BufferedImage[] wall = new BufferedImage[12];
-    public static BufferedImage point_pick;
+
 
     public static void load() {
 
         File file = new File("data/mapdata.txt");
         Scanner sc = null;
 
-        try {
 
-
-            for (int i = 1; i <= 14; i++) {
-                if (i <= 8) {
-                    wall[i - 1] = ImageIO.read(new File("rsc/tiles/" + (i) + ".png"));
-                }
-                if (i >= 11) {
-                    wall[i - 3] = ImageIO.read(new File("rsc/tiles/" + (i) + ".png"));
-                }
-
-            }
-
-            point_pick = ImageIO.read(new File("rsc/tiles/10.png"));
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
 
 
         try {
@@ -94,7 +77,7 @@ public class Map {
         for (int x = 0; x <= Map.pointCo.length - 1; x++) {
             for (int y = 0; y <= Map.pointCo[0].length - 1; y++) {
                 scorepoints[x][y] = new ScoreItem(x,y);
-                if (Map.pointCo[x][y] == 10) {
+                if (Map.pointCo[x][y] == 14) {
                     scorepoints[x][y].setEnabled(true);
                 }
             }
