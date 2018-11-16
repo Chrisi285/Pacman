@@ -29,8 +29,6 @@ public class Map {
         Scanner sc = null;
 
 
-
-
         try {
             sc = new Scanner(file);
         } catch (FileNotFoundException e) {
@@ -53,9 +51,9 @@ public class Map {
         int kachelnx = Integer.parseInt((line_1[0]));
         int kachelny = Integer.parseInt((line_1[1]));
         int pickLine_wall = 0;
-        for (int i = 0; i <= kachelnx - 1; i++) {
-            for (int k = 0; k <= kachelny - 1; k++) {
-                wallCo[i][k] = Integer.parseInt(line_4[pickLine_wall]);
+        for (int x = 0; x < kachelnx; x++) {
+            for (int y = 0; y < kachelny; y++) {
+                wallCo[x][y] = Integer.parseInt(line_4[pickLine_wall]);
                 pickLine_wall++;
             }
         }
@@ -63,9 +61,9 @@ public class Map {
         //Punktdaten in Array laden
         pointCo = new int[Integer.parseInt(line_1[0])][Integer.parseInt(line_1[1])];
         int pickLine_point = 0;
-        for (int i = 0; i <= kachelnx - 1; i++) {
-            for (int k = 0; k <= kachelny - 1; k++) {
-                pointCo[i][k] = Integer.parseInt(line_5[pickLine_point]);
+        for (int x = 0; x < kachelnx; x++) {
+            for (int y = 0; y < kachelny;y++) {
+                pointCo[x][y] = Integer.parseInt(line_5[pickLine_point]);
                 pickLine_point++;
 
             }
@@ -74,9 +72,9 @@ public class Map {
         //Scorepunkte laden
         scorepoints = new ScoreItem[Map.pointCo.length][Map.pointCo[0].length];
 
-        for (int x = 0; x <= Map.pointCo.length - 1; x++) {
-            for (int y = 0; y <= Map.pointCo[0].length - 1; y++) {
-                scorepoints[x][y] = new ScoreItem(x,y);
+        for (int x = 0; x < Map.pointCo.length; x++) {
+            for (int y = 0; y < Map.pointCo[0].length; y++) {
+                scorepoints[x][y] = new ScoreItem(x, y);
                 if (Map.pointCo[x][y] == 14) {
                     scorepoints[x][y].setEnabled(true);
                 }
