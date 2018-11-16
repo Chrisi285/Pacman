@@ -10,7 +10,6 @@ import java.awt.*;
 import java.awt.image.BufferedImage;
 
 public class Draw extends JLabel {
-    int png_Chooser_wall = 0;
 
     Point p;
 
