@@ -8,6 +8,7 @@ import java.io.IOException;
 public class IL {
     public static BufferedImage[] wall = new BufferedImage[12];
     public static BufferedImage point_pick;
+    public static BufferedImage[] ghost = new BufferedImage[3];
 
     public static void load() {
         try {
@@ -16,6 +17,10 @@ public class IL {
 
             }
             point_pick = ImageIO.read(new File("rsc/tiles/14.png"));
+
+            for (int i = 0; i < ghost.length; i++) {
+                ghost[i] = ImageIO.read(new File("rsc/ghosts/"+(i+1)+".png"));
+            }
         } catch (
                 IOException e) {
             e.printStackTrace();

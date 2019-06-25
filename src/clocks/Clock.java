@@ -15,6 +15,7 @@ public class Clock {
             public void run() {
 
                 GameMaster.p.move();
+                GameMaster.ghosts[0].move();
 
             }
         }, 10, 10);

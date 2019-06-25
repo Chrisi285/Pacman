@@ -3,6 +3,7 @@ package draw;
 
 import game.GameMaster;
 import data.Map;
+import game.Ghost;
 import game.ScoreItem;
 
 import javax.swing.*;
@@ -19,10 +20,7 @@ public class Draw extends JLabel {
 
         g.setColor(Color.BLACK);
         g.fillRect(0, 0, this.getWidth(), this.getHeight());
-        g.setColor(Color.YELLOW);
-        g.fillArc(GameMaster.p.getX(), GameMaster.p.getY(),
-                GameMaster.p.getWidth(), GameMaster.p.getHeight(),
-                GameMaster.p.getAng_1(), GameMaster.p.getAng_2());
+      
 
         //DrawWall
         for (int x = 0; x <= Map.wallCo.length - 1; x++) {
@@ -42,6 +40,20 @@ public class Draw extends JLabel {
                     g.drawImage(IL.point_pick, p.x, p.y, null);
                 }
             }
+        }
+
+        g.setColor(Color.YELLOW);
+        g.fillArc(GameMaster.p.getX(), GameMaster.p.getY(),
+                GameMaster.p.getWidth(), GameMaster.p.getHeight(),
+                GameMaster.p.getAng_1(), GameMaster.p.getAng_2());
+
+       /* for (int i = 0; i < GameMaster.ghosts.length; i++) {
+            p = Map.ptc(GameMaster.ghosts[i].getX(),GameMaster.ghosts[i].getY());
+            g.drawImage(IL.ghost[i],p.x,p.y,null);
+        }*/
+
+        for (int i = 0; i < GameMaster.ghosts.length; i++) {
+            g.drawImage(IL.ghost[i],GameMaster.ghosts[i].getX(),GameMaster.ghosts[i].getY(), null);
         }
 
 
